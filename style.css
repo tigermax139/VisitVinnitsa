@@ -1,0 +1,431 @@
+@font-face {
+    font-family: "Glyphter";
+    src: url("fonts/glyphter/Glyphter.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+/*---preloader---*/
+.overlay{
+    position: absolute;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0, 0.85);
+    z-index: 2;
+    
+}
+.preload-round, .preload-round:before, .preload-round:after {
+    border: 4px solid transparent;
+    border-radius: 50%;
+}
+.preload-round:after, .preload-round:before  {
+    content: " ";
+    position: absolute;
+   
+}
+.preload-round {
+    position: relative;
+    border-top-color:  #bac900;
+    width: 150px;
+    height: 150px;
+    margin: 150px auto;
+    -webkit-animation: spin 1s infinite linear ;
+    animation: spin 1s infinite  linear ;
+}
+.preload-round:before {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border-top-color: #00abd4;
+    -webkit-animation: spin 1s infinite ease-in ;
+    animation: spin 2s infinite ease-in ;
+}
+.preload-round:after {
+    top: 40px;
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
+    border-top-color: #ff1400; 
+    border-bottom-color: #ff1400;
+    -webkit-animation: spin 1s infinite ease-out alternate ;
+    animation: spin 3s infinite ease-out alternate ;
+}
+.loaded .overlay{
+    opacity: 0;
+    z-index: -1;
+    -webkit-transition: all 1s linear;
+    transition: all 1s linear;
+}
+
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg) ;
+            -ms-transform: rotate(0deg) ;
+            transform: rotate(0deg) ;  
+    }
+    to { 
+        -webkit-transform: rotate(360deg) ;
+        -ms-transform: rotate(360deg) ;
+         transform: rotate(360deg) ;  
+    }
+}
+@keyframes spin {
+    from { -webkit-transform: rotate(0deg) ;
+            -ms-transform: rotate(0deg) ;
+            transform: rotate(0deg) ;  
+    }
+    to { 
+        -webkit-transform: rotate(360deg) ;
+        -ms-transform: rotate(360deg) ;
+         transform: rotate(360deg) ;  
+    }
+}
+
+
+
+
+
+
+/***-----END preload-----**/
+div.index-txt {
+    display:block;
+    position: relative;
+    overflow: hidden;
+    padding-left: 150px;
+    padding-right: 50px;
+    color: white;
+    font-size: 102px;
+    line-height: 110px;
+    background-color: (0,0,0, 0.5);
+    font-family: "Comic Sans MS";
+}
+div.index-txt:before {
+    content: "";
+    background:white;
+    width: 10px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 70px;
+    animation: flash 1s infinite;
+    animation-timing-function: ease-in-out;
+}
+header {
+    width: 100%;
+}
+.logo {
+    position: relative;
+    display: block;
+    width: 50%;
+    min-height: 200px;
+    margin: 0 auto;
+    padding-bottom: 60px;
+}
+.logo img {
+    max-width: 200px;
+    display: block;
+    
+    position: absolute;
+    left: 50%;
+    top: -150px;
+    margin-left: -100px;
+}
+/*
+.logo:hover{
+    min-height: 200px;
+}
+*/
+.logo:hover img {
+    top: 0px;
+    transition: 1s;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+ul.menu a {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #D90000;
+    color: wheat;
+    text-decoration: none;
+    display: inline-block;
+    position: absolute;
+    box-shadow: inset 0 0 0 5px rgba(0, 0, 0, 0.1);
+}
+ul.menu a:hover {
+    box-shadow:  0 0 15px 5px rgba(0, 0, 0, 0.1);
+    transform: scale(1.1);
+    transition: all 0.1s linear ;
+}
+.glyphter {
+    font-family: "Glyphter";
+    font-size: 36px;
+    line-height: 52px;
+    font-weight: 400;
+    color: white;
+}
+.menu-info {
+    top: -5000px;
+    z-index: 1;
+}
+.menu-hidden {
+    display: inline-block;
+    background-color: #D90000;
+    color: white;
+    font-family: "Comic Sans MS";
+    box-shadow: inset 0 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 33px;
+    padding: 5px 20px;
+    font-size: 24px;
+    line-height: 32px;
+    position: absolute;
+    opacity: 0;
+    transform: scale(0);
+    z-index: -10000;
+        
+}
+.menu-info-hidden {
+    left: -210px;
+    top: 13px;
+}
+.menu-photo-hidden {
+    left: -110px;
+    top: 30px;
+}
+.menu-hotels-hidden {
+    left: 80px;
+}
+.menu-maps-hidden {
+    left: 80px;
+}
+ul.menu a:hover .menu-hidden{
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.8s;
+}
+.menu-photo {
+    top: -5000px;
+}
+.menu-hotels {
+    top: -5000px;
+}
+.menu-maps {
+    top: -5000px;
+}
+.logo:hover ul>a.menu-info {
+    top: 50px;
+    left: 40px;
+    transition: 1s;
+}
+.logo:hover ul>a.menu-photo {
+    visibility: visible;
+    top: 160px;
+    left: 110px;
+    transition: 1.5s;
+}
+.logo:hover ul>a.menu-hotels {
+    visibility: visible;
+    top: 160px;
+    left: 360px;
+    transition: 1.5s;
+}
+.logo:hover ul>a.menu-maps {
+    top: 50px;
+    transition: 1s;
+    left: 430px;
+}
+.logo:hover ~ div.arrows{
+    opacity: 0;
+    transition: 0.5s all;
+    top: 50%;
+}
+ul.menu a li{
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+}
+/*****---ARrows--*******/
+.arrows{
+    width: -1px;
+    height: -1px;
+    position: absolute;
+    top: 15%;
+    left: 48%;
+    background-color: transparent;
+    animation: arrows-up 1s infinite;
+    animation-timing-function: ease-in;
+    animation-fill-mode: both;
+    animation-direction: alternate;
+}
+.arrows:before {
+    content: "";
+    width: 10px;
+    height: 50px;
+    background-color: white;
+    position: absolute;
+    transform: rotate(60deg);
+    border-radius: 10px;
+    box-shadow: 20px 10px 0px 0px white;
+    
+}
+.arrows:after {
+    content: "";
+    width: 10px;
+    height: 50px;
+    background-color: white;
+    position: absolute;
+    left: 38px;
+    top: 0px;
+    transform: rotate(-60deg);
+    border-radius: 10px;
+    box-shadow: -20px 10px 0px 0px white;
+}
+/*******--------------------POSTER HTMl START----------------------------------***********/
+div[class^="poster"],
+section[class^="poster"] {
+    font-family: "Verdana", sans-serif;
+}
+.poster-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Comic Sans MS";
+}
+.poster{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.first__month,
+.second__month,
+.third__month {
+    display: none;
+}
+.poster__month__item {
+   display: flex;
+   align-content: flex-start;
+   flex-direction: row;
+   margin-bottom: 25px;
+}
+.poster__item__period {
+   order: 0; 
+   align-items: flex-start;
+   text-transform: uppercase;
+   text-align: right;
+}
+.poster__item__date {
+    display: block;
+    font-size: 5em;
+}
+.poster__item__month {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.poster__item__time {
+    display: block;
+    font-size: 1.1em;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+.poster__item__img {
+    order: 1;
+    margin: 0 15px 0 15px;
+    background: white;
+}
+.poster__item__img img {
+    display: block;
+    border-radius: 20%;
+}
+.poster__item__subscribe {
+    order: 2;
+}
+.poster__item__subscribe h3 {
+    margin-top: 0;
+    text-transform: uppercase;
+    color: #CE2125;
+    font-weight: 400;
+}
+.poster__item__place {
+    position: relative;
+    left: 40px;
+}
+.poster__item__place::before {
+    content: "";
+    position: absolute;
+    left: -40px;
+    top: -10px;
+    width: 10px;
+    height: 10px;
+    border: 10px solid #CE2125;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+}
+.poster__month__select {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+.poster input[type="radio"]{
+    display: none;
+}
+#first__month:checked ~ .poster__month__select label[for="first__month"],
+#second__month:checked ~ .poster__month__select label[for="second__month"],
+#third__month:checked ~ .poster__month__select label[for="third__month"] {
+    background: wheat;
+}
+#first__month:checked ~ .first__month {
+    display: block;
+}
+#second__month:checked ~ .second__month {
+    display: block;
+}
+#third__month:checked ~ .third__month {
+    display: block;
+}
+.poster__btn {
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+    border: 2px solid #CE2125;
+    border-radius: 50px;
+    background: white;
+    color: #CE2125;
+    font-size: 2em;
+    margin-right: 20px;
+    padding: 5px 20px;  
+}
+.poster__btn:hover {
+    background: wheat;
+}
+
+/*******--------------------POSTER HTMl END----------------------------------***********/
+
+/*------ANIMATION--------*/
+@keyframes flash {
+    from{
+        opacity: 1;
+        color: white;
+    }
+    
+    to {
+        opacity: 0;
+        color: fuchsia;
+    }
+}
+@keyframes arrows-up {
+    to {
+        transform: translateY(-30px);
+    }
+}

@@ -1,0 +1,44 @@
+body {
+    background-color: palevioletred;
+}
+.arrows{
+    width: -1px;
+    height: -1px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: transparent;
+    animation: arrows-up 1s infinite;
+    animation-timing-function: ease-in;
+    animation-fill-mode: both;
+    animation-direction: alternate;
+}
+.arrows:before {
+    content: "";
+    width: 10px;
+    height: 50px;
+    background-color: white;
+    position: absolute;
+    transform: rotate(60deg);
+    border-radius: 10px;
+    box-shadow: 20px 10px 0px 0px white;
+    
+}
+.arrows:after {
+    content: "";
+    width: 10px;
+    height: 50px;
+    background-color: white;
+    position: absolute;
+    left: 38px;
+    top: 0px;
+    transform: rotate(-60deg);
+    border-radius: 10px;
+    box-shadow: -20px 10px 0px 0px white;
+}
+@keyframes arrows-up {
+    to {
+        transform: translateY(-30px);
+    }
+}
+
